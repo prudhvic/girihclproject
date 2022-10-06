@@ -1,33 +1,46 @@
 import React, { useState } from "react";
 import { useQuizContext } from "../context/QuizContext";
 
-const Question = ({ quiz }) => {
-  let { increase } = useQuizContext();
-  let [clickedAnswer, setClickedAnswer] = useState(false);
-  let checkAnswer = (userAnswer, correctAnswer) => {
-    setClickedAnswer(userAnswer);
-    if (userAnswer === correctAnswer) {
-      increase();
+const Question = ({ question }) => {
+  let [answer, setAnswer] = useState("");
+  let { setScore, score } = useQuizContext();
+  let [buttonsDisabled, setButtonsDisabled] = useState(false);
+  console.log(question);
+  let checkAnswer = () => {
+    if (answer === "" && answer.length === 0) {
+      alert("please select answert to submit");
+      return;
+    }
+    if (answer === question.correctAnswer) {
+      setScore((prev) => prev + 1);
+    } else {
+      setButtonsDisabled(true);
     }
   };
-
+  let clearOption = () => {
+    setButtonsDisabled(false);
+    if (answer === question.correctAnswer) {
+      setScore((prev) => prev - 1);
+    }
+    setAnswer("");
+  };
   return (
-    <div className="question-container">
-      <p className="question">{quiz.question}</p>
-      <div className="answers">
-        {quiz.answers.map((answer) => (
+    <div key={question.id} className="question-container">
+      <p className="question">{question.question}</p>
+      <div className="options">
+        {question.options.map((option) => (
           <button
-            disabled={clickedAnswer === quiz.correctAnswer}
-            onClick={() => checkAnswer(answer, quiz.correctAnswer)}
-            className={
-              quiz.correctAnswer === clickedAnswer && answer === clickedAnswer
-                ? "correct"
-                : ""
-            }
+            disabled={buttonsDisabled}
+            className={answer === option ? "select" : ""}
+            onClick={() => setAnswer(option)}
           >
-            {answer}
+            {option}
           </button>
         ))}
+      </div>
+      <div className="edits">
+        <button onClick={clearOption}>clear</button>
+        <button onClick={checkAnswer}>submit</button>
       </div>
     </div>
   );

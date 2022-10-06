@@ -1,11 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
-import QuestionContainer from "./components/QuestionContainer";
-
+import Category from "./components/Category";
+import { Routes, Route } from "react-router-dom";
+import Quiz from "./components/Quiz";
+import Results from "./components/Results";
 function App() {
   return (
     <div>
-      <QuestionContainer />
+      <Routes>
+        <Route path="/" element={<Category />} />
+        <Route path="/category/:id" element={<Quiz />} />
+        <Route path="/quiz/result" element={<Results />} />
+      </Routes>
     </div>
   );
 }
