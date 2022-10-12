@@ -8,3 +8,79 @@
   line-height: 1.5;
   text-transform: capitalize;
 }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1em;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+nav ul a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+.form button {
+  width: 100%;
+  max-width: 270px;
+  padding: 0.8em 0.6em;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 1em;
+  border: none;
+}
+button svg {
+  font-size: 2rem;
+}
+.signin-btn a {
+  display: flex;
+
+  gap: 0.5em;
+  padding: 0.4em 0.8em;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: none;
+}
+.signin-btn a:hover {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.9);
+  border: 1px solid black;
+}
+nav ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 10px;
+  transition: 0.4s;
+  padding: 0.4em 0.8em;
+}
+@media (max-width: 960px) {
+  nav ul a {
+    font-size: 1rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+}

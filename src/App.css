@@ -2,7 +2,7 @@
   padding: 10px;
 }
 body {
-  background-color: #d5f3f9;
+  /* background-color: #d5f3f9; */
 }
 .category-section h1 {
   text-align: center;
@@ -128,15 +128,17 @@ body {
 }
 .results h2 {
   font-size: 2rem;
-  color: #F72585;
-
+  color: #f72585;
 }
-.results p{
+.results p {
   font-size: 3rem;
-  color: #560BAD;
+  color: #560bad;
 }
 @media (max-width: 960px) {
   .category-container img {
     width: 270px;
+  }
+  .category-section h1 {
+    font-size: 1.4rem;
   }
 }
