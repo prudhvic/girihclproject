@@ -134,6 +134,33 @@ body {
   font-size: 3rem;
   color: #560bad;
 }
+
+.home-page{
+  display: flex;
+  padding: 1em;
+  align-items: center;
+  gap: 2em;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+.home-page h2{
+  font-size: 2rem;
+}
+.home-page p{
+  font-size: .9rem;
+}
+.home-page .content{
+  max-width: 400px;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+}
+.home-page img{
+  width:600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 @media (max-width: 960px) {
   .category-container img {
     width: 270px;
