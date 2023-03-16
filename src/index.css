@@ -76,6 +76,21 @@ nav ul li a:hover {
   transition: 0.4s;
   padding: 0.4em 0.8em;
 }
+.btn{
+  width: 100%;
+    max-width: 270px;
+    padding: 0.8em 0.6em;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    justify-content: center;
+    border-radius: 10px;
+    gap: 1em;
+    border: none;
+}
 @media (max-width: 960px) {
   nav ul a {
     font-size: 1rem;

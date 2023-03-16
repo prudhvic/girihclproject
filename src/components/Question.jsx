@@ -5,7 +5,6 @@ const Question = ({ question }) => {
   let [answer, setAnswer] = useState("");
   let { setScore, score } = useQuizContext();
   let [buttonsDisabled, setButtonsDisabled] = useState(false);
-  console.log(question);
   let checkAnswer = () => {
     if (answer === "" && answer.length === 0) {
       alert("please select answert to submit");
